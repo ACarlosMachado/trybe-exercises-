@@ -10,3 +10,18 @@
 div:hover{
     border: 5px solid;
 }
+#div1:hover{
+    border: 5px solid red;
+}
+#div2:hover{
+    border: 5px solid blue;
+}
+#div3:hover{
+    border: 5px solid green;
+}
+#div4:hover{
+    border: 5px solid purple;
+}
+#div5:hover{
+    border: 5px solid yellow;
+}
