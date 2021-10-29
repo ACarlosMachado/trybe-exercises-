@@ -19,9 +19,31 @@ div:hover{
 #div3:hover{
     border: 5px solid green;
 }
+#div3{
+    font-size: 25px;
+}
 #div4:hover{
     border: 5px solid purple;
 }
 #div5:hover{
     border: 5px solid yellow;
+}
+#h31{
+    background-color: yellow;
+    font-style: italic;
+}
+#h32{
+    background-color: red;
+}
+#h34{
+    background-color: blue;
+    font-style: italic;
+}
+    
+#h35{
+    background-color: gray;
+}
+#h36{
+    background-color: orange;
+    font-style: italic;
 }
