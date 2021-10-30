@@ -30,3 +30,29 @@ li{
 li em{
     font-weight: bolder ;
 }
+.li1{
+    color: blue;
+}
+.java{
+    background-color: pink;
+}
+#li1:hover{
+    font-weight: bolder;
+    color: orange;
+}
+#li2:hover{
+    font-weight: bolder;
+    color: green;
+}
+#li3:hover{
+    font-weight: bolder;
+    color: black;
+}
+#li4:hover{
+    font-weight: bolder;
+    color: yellow;
+}
+#li5:hover{
+    font-weight: bolder;
+    color: green;
+}
