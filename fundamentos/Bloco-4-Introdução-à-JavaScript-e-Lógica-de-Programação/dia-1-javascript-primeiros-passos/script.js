@@ -129,3 +129,29 @@ if (porcentagem >= 90) {
 }else if (porcentagem <0 || porcentagem > 100){
     console.log("Erro!!!");
 }
+
+// 8) Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
+// Bonus: use somente um if .
+
+const isPar1 = 20;
+const isPar2 = 15;
+const isPar3 = 11;
+
+if (isPar1 % 2 === 0 || isPar2 % 2 === 0 || isPar3 % 2 === 0 ){
+    console.log("True");
+}else{
+    console.log("false")
+}
+
+//Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele retorna false .
+// Bonus: use somente um if .
+
+const isImpar1 = 3;
+const isImpar2 = 4;
+const isImpar3 = 6;
+
+if (isImpar1 % 2 != 0 || isImpar2 % 2 != 0 || isImpar3 % 2 != 0 ){
+    console.log("true");
+}else{
+    console.log("false");
+}
