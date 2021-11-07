@@ -19,4 +19,14 @@ var divisao = (a / b);
 var modulo = (a % b);
     console.log(modulo);
 
+// 2) Faça um programa que retorne o maior de dois números. Defina no começo do programa duas constantes com os valores que serão comparados.
+
+var c = 5;
+var d = 14;
+
+if (c > d){
+    console.log(c);
+}else{
+    console.log(d);
+}
 
