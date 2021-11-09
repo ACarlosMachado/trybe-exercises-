@@ -85,15 +85,24 @@
 // }console.log(menor);
 
 // 8)Utilizando for , crie um array que vá de 1 até 25 e imprima o resultado;
+//resolução 8:
 let umA25 = [];
 for (let i = 1; i <= 25 ; i+=1){
-    umA25 +=i
-    umA25 += " ";
+    umA25.push(i)
+    // umA25 +=i
+    // umA25 += " ";
 }
 console.log(umA25);
-// 9) Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2 .
 
+// 9) Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2.
+//Resolução 9: 
 
+var divisão = [];
+
+for (let i = 0; i < umA25.length ;i+=1){
+    divisão.push((umA25[i] / 2 ))
+}
+console.log(divisão)
 
 
 
