@@ -46,7 +46,15 @@
 
 // 5) Utilizando for , descubra qual o maior valor contido no array e imprima-o;
 //Resolução 5:
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
+var maior = numbers[0];
+
+for (let i = 0; i <numbers.length; i+=1){
+    if(maior < numbers[i]){
+        maior = numbers[i];
+    }
+}console.log(maior)
 
 
 // 6) Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado";
