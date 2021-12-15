@@ -62,19 +62,66 @@
 // Para uma melhor organização, faça commits a cada tarefa concluída. Vamos aos exercícios:
 // 1- Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
 
-let body1 = document.body
+const body1 = document.body
 let newH1 = document.createElement('h1');
 newH1.innerHTML = 'Exercício 5.2 - JavaScript DOM';
 body1.appendChild(newH1)
 
 // 2- Adicione a tag main com a classe main-content como filho da tag body ;
+
+const newMain = document.createElement('main');
+newMain.className = "main-content";
+body1.appendChild(newMain)
+
 // 3- Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+
+let newSection = document.createElement('section');
+newSection.className = "center-content";
+newMain.appendChild(newSection)
+
 // 4- Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+
+let newP = document.createElement('p');
+newP.innerHTML ="Algum TEXTO";
+newSection.appendChild(newP);
+
 // 5- Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+
+let sectionTwo = document.createElement("section");
+sectionTwo.className = "left-content";
+newMain.appendChild(sectionTwo)
+
 // 6- Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+
+let sectionThree = document.createElement("section");
+sectionThree.className = "right-content";
+newMain.appendChild(sectionThree)
+
 // 7- Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+
+let image = document.createElement('img');
+image.className ="small-image";
+image.src = "https://picsum.photos/200"
+sectionTwo.appendChild(image)
+
+
 // 8- Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+
+let list = document.createElement('ul'); // Cria a lista não ordenada
+sectionThree.appendChild(list) // Faz com que a Ul seja filho de sectionThree
+let numExtenso = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']; //Array de um a dez por extenso
+for (let i=0; i < numExtenso.length; i+=1){ //Laço for que percorre o array numExtenso e cria nova LI com innerHTML = numExtenso[i]
+    let listItem = document.createElement('li')
+    listItem.innerHTML = numExtenso[i]
+    list.appendChild(listItem) // li é filho de ul
+}
+
 // 9- Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+
+for (let i= 1; i<=3; i+=1){ // Laço for que cria três tags h3
+    let h3 = document.createElement('h3');
+    newMain.appendChild(h3) //h3 é filho da section newMain
+}
     </script>
   </body>
 </html>
