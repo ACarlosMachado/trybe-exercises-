@@ -46,3 +46,18 @@ for (let index = 0; index < dezDaysList.length; index += 1) {
 }
 } creatDates()
 
+// Exercício 2:
+// Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
+// Adicione a este botão a ID "btn-holiday" .
+// Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+let buttons = document.querySelector(".buttons-container")
+function holiday() {
+  
+  let btn = document.createElement('button')
+  btn.setAttribute("id", "btn-holiday") // https://stackoverflow.com/questions/19625646/javascript-adding-an-id-attribute-to-another-created-element
+  var lbl = document.createTextNode("Feriados") //https://pt.stackoverflow.com/questions/217656/criar-botao-usando-document-createelement
+  btn.appendChild(lbl)
+  
+  
+  buttons.appendChild(btn)
+} holiday()
