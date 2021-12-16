@@ -84,3 +84,11 @@ function clickBtn (){
 // Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
 // Adicione a este botão o ID "btn-friday" .
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+
+function creatBtnFriday (){
+  let btnFriday = document.createElement('button');
+  btnFriday.setAttribute('id', 'btn-friday');
+  let txt = document.createTextNode('Sexta-feira');
+  btnFriday.appendChild(txt)
+  buttons.appendChild(btnFriday)
+}creatBtnFriday()
