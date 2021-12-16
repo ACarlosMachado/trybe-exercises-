@@ -27,21 +27,39 @@ function adicionaClasse(event){
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
-input.addEventListener('keyup', alteraCor) // input recebe um escutador de evento que ao soltar a tecla do teclado dispara a função alteraCor()
+input.addEventListener('keyup', alteraCorTech) // input recebe um escutador de evento que ao soltar a tecla do teclado dispara a função alteraCor()
 
-function alteraCor (){ 
+function alteraCorTech (){ 
   let haveTech = document.querySelector('.tech') //Captura o elemento que contém a classe 'tech';
   haveTech.style.backgroundColor = input.value  // O elemento capturado na linha anterior recebe a cor de fundo digitada no input
 }
-
-
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portifólio?
 
+myWebpage.addEventListener('dblclick', myGitHub) // myWebpage recebe um escutador de evento que ao dar duplo click dispara a função myGitHub()
+
+
+function myGitHub () {
+  window.location.href = "https://github.com/ACarlosMachado" // Consultei o seguinte link: https://pt.stackoverflow.com/questions/3312/como-redirecionar-o-usu%C3%A1rio-para-outra-p%C3%A1gina-em-javascript-jquery
+}
+
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+
+myWebpage.addEventListener('mouseenter', colorMyWebPage) 
+
+function colorMyWebPage() {
+  myWebpage.style.color = "orange"
+}
+
+myWebpage.addEventListener('mouseout', colorOriginMyWebPage)
+
+function colorOriginMyWebPage() {
+  myWebpage.style.color = "white"
+}
+
 
 // Segue abaixo um exemplo do uso de event.target:
 
