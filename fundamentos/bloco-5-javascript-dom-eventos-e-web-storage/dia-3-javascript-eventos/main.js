@@ -24,10 +24,17 @@ function adicionaClasse(event){
     event.target.classList.add("tech");
 }
 
-
-
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
+
+input.addEventListener('keyup', alteraCor) // input recebe um escutador de evento que ao soltar a tecla do teclado dispara a função alteraCor()
+
+function alteraCor (){ 
+  let haveTech = document.querySelector('.tech') //Captura o elemento que contém a classe 'tech';
+  haveTech.style.backgroundColor = input.value  // O elemento capturado na linha anterior recebe a cor de fundo digitada no input
+}
+
+
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
