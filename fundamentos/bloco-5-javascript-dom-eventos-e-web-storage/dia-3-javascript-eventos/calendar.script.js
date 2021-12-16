@@ -52,7 +52,7 @@ for (let index = 0; index < dezDaysList.length; index += 1) {
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 let buttons = document.querySelector(".buttons-container")
 function holiday() {
-  
+
   let btn = document.createElement('button')
   btn.setAttribute("id", "btn-holiday") // https://stackoverflow.com/questions/19625646/javascript-adding-an-id-attribute-to-another-created-element
   var lbl = document.createTextNode("Feriados") //https://pt.stackoverflow.com/questions/217656/criar-botao-usando-document-createelement
@@ -61,3 +61,26 @@ function holiday() {
   
   buttons.appendChild(btn)
 } holiday()
+
+// Exercício 3:
+// Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
+
+const btnFeriado = document.getElementById("btn-holiday");
+btnFeriado.addEventListener('click', clickBtn)
+
+function clickBtn (){
+ let classHoliday =  document.getElementsByClassName('holiday');
+ for (let index = 0; index < classHoliday.length; index += 1) {
+   if(classHoliday[index].style.backgroundColor === "rgb(117, 207, 224)") {
+    classHoliday[index].style.backgroundColor = "rgb(238,238,238)"
+   } else {
+    classHoliday[index].style.backgroundColor = "rgb(117, 207, 224)"
+   }  
+ }
+} 
+
+// Exercício 4:
+// Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+// Adicione a este botão o ID "btn-friday" .
+// Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
