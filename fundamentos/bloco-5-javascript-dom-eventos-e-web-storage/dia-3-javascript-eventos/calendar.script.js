@@ -32,14 +32,18 @@ for (let index = 0; index < dezDaysList.length; index += 1) {
  // day.classList.add("day")
   day.innerHTML = dezDaysList[index]
   lista.appendChild(day);
-  console.log(dezDaysList[index])   
+  //console.log(dezDaysList[index])   
 
-  if(dezDaysList[index] === 24 || dezDaysList[index] === 25 || dezDaysList[index] === 31){
+  if(dezDaysList[index] === 24 || dezDaysList[index] === 31){
     day.classList.add("day")
     day.classList.add("holiday")
-   } else if (dezDaysList[index] === 4 || dezDaysList[index] === 11 || dezDaysList[index] === 18 || dezDaysList[index] === 25 ) {
+   } else if (dezDaysList[index] === 4 || dezDaysList[index] === 11 || dezDaysList[index] === 18  ) {
     day.classList.add("day")
     day.classList.add("friday")
+  } else if (dezDaysList[index] === 25 ){ 
+    day.classList.add("day")
+    day.classList.add("friday")
+    day.classList.add("holiday")
   } else {
     day.classList.add("day")
   }
@@ -67,9 +71,9 @@ function holiday() {
 // É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
 
 const btnFeriado = document.getElementById("btn-holiday");
-btnFeriado.addEventListener('click', clickBtn)
+btnFeriado.addEventListener('click', corFeriados)
 
-function clickBtn (){
+function corFeriados (){
  let classHoliday =  document.getElementsByClassName('holiday');
  for (let index = 0; index < classHoliday.length; index += 1) {
    if(classHoliday[index].style.backgroundColor === "rgb(117, 207, 224)") {
@@ -92,3 +96,75 @@ function creatBtnFriday (){
   btnFriday.appendChild(txt)
   buttons.appendChild(btnFriday)
 }creatBtnFriday()
+
+// Exercício 5:
+// Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
+
+ const btnFriday = document.getElementById("btn-friday"); // Captura o botão "sexta-feira"
+ btnFriday.addEventListener('click', selecionaSextas); // Ouvidor de click que dispara a função selecionaSextas
+ const sextou = "Sextou 'o/'"
+ let datas = [] //Array vazio para armazernar as datas que são sextas-feiras
+
+function selecionaSextas (){ //Função que altera o texto das sextas
+ let classFriday =  document.querySelectorAll('.friday'); // Seleciona todas as sextas
+ for (let index = 0; index < classFriday.length; index += 1){ //Percorre todas as sextas
+  datas.push(classFriday[index].innerHTML) // e guarda o valor no array datas
+
+   if(classFriday[index].innerHTML !== sextou) { 
+    classFriday[index].innerHTML = sextou
+   } else if (classFriday[index].innerHTML === sextou){
+      classFriday[index].innerHTML = datas[index]
+   }  
+  }
+} 
+
+// Exercício 6
+// Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original. 
+
+function aumentaZoom () {
+  let days = document.querySelector('#days');
+
+  days.addEventListener('mouseover', function(event) {
+    event.target.style.fontSize = '30px';
+    event.target.style.fontWeight = '600';
+  })
+} aumentaZoom()
+
+function diminuiZoom () {
+  let days = document.querySelector('#days');
+
+  days.addEventListener('mouseout', function(event) {
+    event.target.style.fontSize = '20px';
+    event.target.style.fontWeight = '200';
+  })
+} diminuiZoom()
+
+// Exercício 7
+// Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
+
+
+function addTarefa (tarefa) { 
+  let myTasks = document.querySelector('.my-tasks'); //Captura o elemento Pai;
+  let novaTarefa = document.createElement('span'); //cria o novo elemento;
+  
+  myTasks.appendChild(novaTarefa) //Faz com que o novo elemento seja filho de Pai;
+
+  novaTarefa.innerHTML = tarefa //O texto do novo elemento é o parametro da função;
+}addTarefa('Nova Tarefa')
+
+
+// Exercício 8
+// Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task .
+// O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
+
+function legendaComCor(cor) {
+  let divLegenda = document.createElement('div');
+  divLegenda.classList.add('task')
+  divLegenda.style.backgroundColor = cor
+  
+  let myTasks = document.querySelector('.my-tasks');
+  myTasks.appendChild(divLegenda)
+}legendaComCor("red")
