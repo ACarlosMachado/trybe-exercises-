@@ -37,16 +37,6 @@ const order = {
   };
   
   const customerInfo = (order) => {
-    // Adicione abaixo as informações necessárias.
-    // const address = 'address';
-    // const deliveryPerson = order.order.delivery.deliveryPerson;
-    // const customerName = order['name'];
-    // const customerPhone = order['phoneNumber'];
-    // const street = order[address].street;
-    // const number = order[address].number;
-    // const apartment = order[address].apartment;
-  
-    // console.log(`Olá ${deliveryPerson}, entrega para: ${customerName}, Telefone: ${customerPhone}, R. ${street}, Nº: ${number}, AP: ${apartment}`);
     const deliveryPerson = order.order.delivery.deliveryPerson
     const customerName = order.name;
     const customerPhone = order.phoneNumber;
@@ -60,6 +50,12 @@ const order = {
   
   const orderModifier = (order) => {
     // Adicione abaixo as informações necessárias.  
+  const newBuyer = order.name = 'Luiz Silva';
+  const pizzas = Object.keys(order.order.pizza);
+  const drinks = order.order.drinks.coke.type;
+  const newTotal = order.payment.total = '50';
+  console.log(`Olá ${newBuyer}, o total do seu pedido de ${pizzas[0]}, ${pizzas[1]} e ${drinks} é R$ ${newTotal},00.`);
+
   }
   
   orderModifier(order);
