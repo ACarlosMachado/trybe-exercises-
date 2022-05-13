@@ -9,5 +9,4 @@ const readFile = async() => {
         console.log(error(`${err.message}`))
     }
 }
-
 readFile();
